@@ -20,17 +20,24 @@ class MainActivity : AppCompatActivity() {
     }
     fun click(v: View){
         var total: Int = 0
+        var toastStr = "Thank you for your order: \n"
 
         if(c1.isChecked){
             total += 20
+            toastStr += "Pizza: $20\n"
         }
+
         if(c2.isChecked){
-            total += 15
+            total += 5
+            toastStr += "Coke: $5\n"
         }
         if(c3.isChecked){
-            total += 15
+            total += 10
+            toastStr += "Burger: $10\n"
         }
-        Toast.makeText(this, "$total", Toast.LENGTH_LONG).show()
+        toastStr += "----------------\n Total: $$total"
+
+        Toast.makeText(this, toastStr, Toast.LENGTH_LONG).show()
     }
 
 }
